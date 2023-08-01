@@ -10,6 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { ServicesComponent } from './services/services.component';
+import { ContactComponent } from './contact/contact.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { AboutComponent } from './about/about.component';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ErrorpageComponent,
+    ServicesComponent,
+    ContactComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
