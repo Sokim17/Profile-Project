@@ -14,6 +14,8 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
+import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProjectComponent } from './project/project.component';
     ErrorpageComponent,
     ServicesComponent,
     ContactComponent,
-    ProjectComponent
+    ProjectComponent,
+    EducationComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
