@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { Router } from './app.routes';
 
@@ -30,13 +32,15 @@ import { ExperienceComponent } from './experience/experience.component';
     ContactComponent,
     ProjectComponent,
     EducationComponent,
-    ExperienceComponent
+    ExperienceComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(Router)
+    RouterModule.forRoot(Router),
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
