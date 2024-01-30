@@ -3,38 +3,62 @@
         <fieldset>
             <h3>Contact Me</h3>
             <div class="form-group">
-                <label class="col-form-label mt-4" for="inputName">Name:
+                <label class="col-form-label mt-6" for="name">Name:
                     <input type="text" class="form-control" formControlName="name" placeholder=" Enter your name"
-                        id="inputName" required>
+                        id="name" required>
                 </label>
+                <div
+                    *ngIf="addContactForm.get('name')?.invalid && (addContactForm.get('name')?.dirty || addContactForm.get('name')?.touched)">
+                    <div *ngIf="addContactForm.get('name')?.errors?.['required']">Name is required.</div>
+                    <div *ngIf="addContactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters
+                        long.</div>
+                    <div *ngIf="addContactForm.get('name')?.errors?.['maxlength']">Name cannot exceed 50 characters.
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label mt-4">Email address:
+                <label for="exampleInputEmail1" class="form-label mt-6">Email address:
                     <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
                         aria-describedby="emailHelp" placeholder="Enter your email" required>
                 </label>
-                <br>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                    else.
-                </small>
+                <div
+                    *ngIf="addContactForm.get('email')?.invalid && (addContactForm.get('email')?.dirty || addContactForm.get('email')?.touched)">
+                    <div *ngIf="addContactForm.get('email')?.errors?.['required']">Email is required.</div>
+                    <div *ngIf="addContactForm.get('email')?.errors?.['email']">Please enter a valid email address.
+                    </div>
+                </div>
             </div>
+            <br>
             <div class="form-group">
-                <label for="exampleInputPhone" class="form-label mt-4">Phone Number:
-                    <input type="tel" class="form-control" formControlName="phone" id="exampleInputPhone"
-                        pattern="[0-9]{10}" placeholder="1234567899" required>
+                <label for="exampleInputPhone" class="form-label mt-6">Phone Number (Optional):
+                    <input type="tel" maxlength="10" class="form-control" formControlName="phone" id="exampleInputPhone"
+                        placeholder="1234567899">
                 </label>
             </div>
             <div class="form-group">
-                <label class="col-form-label mt-4" for="inputDefault">Title:
+                <label class="col-form-label mt-6" for="inputDefault">Title:
                     <input type="text" class="form-control" formControlName="title" placeholder="Message Title"
                         id="inputDefault">
                 </label>
+                <div
+                    *ngIf="addContactForm.get('title')?.invalid && (addContactForm.get('title')?.dirty || addContactForm.get('title')?.touched)">
+                    <div *ngIf="addContactForm.get('title')?.errors?.['required']">Title is required.</div>
+                    <div *ngIf="addContactForm.get('title')?.errors?.['minlength']">Title must be at least 2 characters
+                        long.
+                    </div>
+                    <div *ngIf="addContactForm.get('title')?.errors?.['maxlength']">Title cannot exceed 50 characters.
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="exampleTextarea" class="form-label mt-4">Message:
+                <label for="exampleTextarea" class="form-label mt-6">Message:
                     <textarea class="form-control" formControlName="message" formControlName="message"
                         id="exampleTextarea" rows="3"></textarea>
                 </label>
+                <div
+                    *ngIf="addContactForm.get('message')?.invalid && (addContactForm.get('message')?.dirty || addContactForm.get('message')?.touched)">
+                    <div *ngIf="addContactForm.get('message')?.errors?.['required']">Message is required.</div>
+                </div>
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
