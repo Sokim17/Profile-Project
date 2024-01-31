@@ -1,63 +1,85 @@
 <div class="container" style="margin-top: 30px;">
     <form [formGroup]="addContactForm" (ngSubmit)="addContact()">
         <fieldset>
+
             <h3>Contact Me</h3>
+
+            <br>
+
             <div class="form-group">
-                <label class="col-form-label mt-6" for="name">Name:
-                    <input type="text" class="form-control" formControlName="name" placeholder=" Enter your name"
-                        id="name" required>
-                </label>
+                <div class="form-floating mb-3">
+                    <input type="text" id="floatingInput" class="form-control" formControlName="name"
+                        placeholder=" Enter your name" id="name" required>
+                    <label for="floatingInput" class="form-floating mb-3" for="name">Name</label>
+                </div>
                 <div
                     *ngIf="addContactForm.get('name')?.invalid && (addContactForm.get('name')?.dirty || addContactForm.get('name')?.touched)">
-                    <div *ngIf="addContactForm.get('name')?.errors?.['required']">Name is required.</div>
-                    <div *ngIf="addContactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters
-                        long.</div>
-                    <div *ngIf="addContactForm.get('name')?.errors?.['maxlength']">Name cannot exceed 50 characters.
+                    <div *ngIf="addContactForm.get('name')?.errors?.['required']" class="text-danger">Name is required.
                     </div>
                 </div>
             </div>
+
+            <br>
+
             <div class="form-group">
-                <label for="exampleInputEmail1" class="form-label mt-6">Email address:
-                    <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
+                <div class="form-floating mb-3">
+
+                    <input type="email" id="floatingInput" class="form-control" formControlName="email"
                         aria-describedby="emailHelp" placeholder="Enter your email" required>
-                </label>
+                    <label for="floatingInput" class="form-label mt-6">Email address: </label>
+                </div>
+
                 <div
                     *ngIf="addContactForm.get('email')?.invalid && (addContactForm.get('email')?.dirty || addContactForm.get('email')?.touched)">
-                    <div *ngIf="addContactForm.get('email')?.errors?.['required']">Email is required.</div>
-                    <div *ngIf="addContactForm.get('email')?.errors?.['email']">Please enter a valid email address.
+                    <div *ngIf="addContactForm.get('email')?.errors?.['required']" class="text-danger">Email is
+                        required.</div>
+                    <div *ngIf="addContactForm.get('email')?.errors?.['email']" class="text-danger">Please enter a valid
+                        email address.
                     </div>
                 </div>
             </div>
             <br>
             <div class="form-group">
-                <label for="exampleInputPhone" class="form-label mt-6">Phone Number (Optional):
-                    <input type="tel" maxlength="10" class="form-control" formControlName="phone" id="exampleInputPhone"
+                <div class="form-floating mb-3">
+                    <input type="tel" maxlength="10" class="form-control" formControlName="phone" id="floatingInput"
                         placeholder="1234567899">
-                </label>
+                    <label for="floatingInput" class="form-label mt-6">Phone Number (Optional): </label>
+                </div>
             </div>
+
+            <br>
+
             <div class="form-group">
-                <label class="col-form-label mt-6" for="inputDefault">Title:
+                <div class="form-floating mb-3">
                     <input type="text" class="form-control" formControlName="title" placeholder="Message Title"
-                        id="inputDefault">
-                </label>
+                        id="floatingInput">
+                    <label class="col-form-label mt-6" for="floatingInput">Title: </label>
+                </div>
                 <div
                     *ngIf="addContactForm.get('title')?.invalid && (addContactForm.get('title')?.dirty || addContactForm.get('title')?.touched)">
-                    <div *ngIf="addContactForm.get('title')?.errors?.['required']">Title is required.</div>
-                    <div *ngIf="addContactForm.get('title')?.errors?.['minlength']">Title must be at least 2 characters
+                    <div *ngIf="addContactForm.get('title')?.errors?.['required']" class="text-danger">Title is
+                        required.</div>
+                    <div *ngIf="addContactForm.get('title')?.errors?.['minlength']" class="text-danger">Title must be at
+                        least 2 characters
                         long.
-                    </div>
-                    <div *ngIf="addContactForm.get('title')?.errors?.['maxlength']">Title cannot exceed 50 characters.
                     </div>
                 </div>
             </div>
+
+            <br>
+
             <div class="form-group">
-                <label for="exampleTextarea" class="form-label mt-6">Message:
+                <div class="form-floating mb-3">
                     <textarea class="form-control" formControlName="message" formControlName="message"
-                        id="exampleTextarea" rows="3"></textarea>
-                </label>
+                        id="floatingInput" rows="3"></textarea>
+                    <label for="floatingInput" class="form-label mt-6">Message: </label>
+
+                </div>
+
                 <div
                     *ngIf="addContactForm.get('message')?.invalid && (addContactForm.get('message')?.dirty || addContactForm.get('message')?.touched)">
-                    <div *ngIf="addContactForm.get('message')?.errors?.['required']">Message is required.</div>
+                    <div *ngIf="addContactForm.get('message')?.errors?.['required']" class="text-danger">Message is
+                        required.</div>
                 </div>
             </div>
             <br>
