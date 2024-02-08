@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { BlogComponent } from './blog/blog.component';
 
 export const Router = [
   {
@@ -35,6 +36,10 @@ export const Router = [
   {
     path: 'experience',
     component: ExperienceComponent,
+  },
+  {
+    path: 'blog',
+    component: BlogComponent,
   },
   {
     path: '**',
